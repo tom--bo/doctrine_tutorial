@@ -9,11 +9,11 @@ $isDevMode = true;
 $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/src"), $isDevMode);
 
 $conn = array(
-    ‘dbname’ => 'dtest',
-    ‘user’ => ‘silex’,
-    ‘password’ => ‘password’,
-    ‘host’ => ‘localhost’,
-    ‘driver’ => ‘pro_mysql’,
+    'dbname' => 'dtest',
+    'user' => 'silex',
+    'password' => 'password',
+    'host' => 'localhost',
+    'driver' => 'pdo_mysql',
 );
 
 $entityManager = EntityManager::create($conn, $config);
