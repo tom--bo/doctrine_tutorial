@@ -1,5 +1,7 @@
 <?php
 //src/User.php
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
 * @Entity @Table(name="users")
 */
@@ -15,6 +17,13 @@ class User
     * @var string
     */
     protected $name;
+
+    protected $products;
+
+    public function __construct()
+    {
+        $this->products = new ArrayCollection();
+    }
 
     public function getId()
     {
