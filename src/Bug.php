@@ -1,36 +1,38 @@
 <?php
 // src/Bug.php
-use Doctrine\Common\Collections\ArrayCollection;
-
 /**
-*  @Entity(repositoryClass="BugRepositoy") @Table(name="bugs")
+*  @Entity @Table(name="bugs")
 */
 class Bug
 {
     /**
     * @id @Column(type="integer") @GeneratedValue
-    * @var int
     */
     protected $id;
     /**
     * @Column(type="string")
-    * @var string
     */
     protected $description;
     /**
     * @Column(type="datetime")
-    * @var DateTime
     */
     protected $created;
     /**
     * @Column(type="string")
-    * @var string
     */
     protected $status;
-
-    protected $products = null;
+    /**
+    * @ManyToOne(targetEntity="User", inversedBy="assignedBugs")
+    */
     protected $engineer;
+    /**
+    * @ManyToOne(targetEntity="User", inversedBy="reportedBugs")
+    */
     protected $reporter;
+    /**
+    * @ManyToMany(targetEntity="Product")
+    */
+    protected $products = null;
 
     public function __construct()
     {

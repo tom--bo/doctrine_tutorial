@@ -1,7 +1,5 @@
 <?php
 //src/User.php
-use Doctrine\Common\Collections\ArrayCollection;
-
 /**
 * @Entity @Table(name="users")
 */
@@ -17,10 +15,18 @@ class User
     * @var string
     */
     protected $name;
+    /**
+    * @OneToMany(targetEntity="Bug", mappedBy="reporter")
+    * @var Bug[]
+    **/
+    protected $reportedBugs = null;
+    /**
+    * @OneToMany(targetEntity="Bug", mappedBy="engineer")
+    * @var Bug[]
+    **/
+    protected $assignedBugs = null;
 
     protected $products;
-    private $reportedBugs = null;
-    private $assignedBugs = null;
 
     public function __construct()
     {
