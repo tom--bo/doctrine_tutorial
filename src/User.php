@@ -1,5 +1,7 @@
 <?php
 //src/User.php
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
 * @Entity @Table(name="users")
 */

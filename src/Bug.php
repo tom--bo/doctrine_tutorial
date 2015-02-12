@@ -1,5 +1,7 @@
 <?php
 // src/Bug.php
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
 *  @Entity @Table(name="bugs")
 */
