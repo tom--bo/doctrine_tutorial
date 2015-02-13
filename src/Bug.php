@@ -3,7 +3,8 @@
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
-*  @Entity @Table(name="bugs")
+*  @Entity(repositoryClass="BugRepository")
+*  @Table(name="bugs")
 */
 class Bug
 {
